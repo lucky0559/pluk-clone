@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const Topnav = () => {
   return (
-    <nav className="flex px-12">
+    <nav className="flex px-12 border-b-2 border-gray-200">
       <Link
         href="/"
         className="bg-primary h-16 flex items-center relative z-10"

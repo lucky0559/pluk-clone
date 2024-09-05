@@ -1,4 +1,5 @@
 import { colors } from "@/tailwindConfig/tailwind.config";
+import Link from "next/link";
 import React from "react";
 
 type ButtonProps = {
@@ -7,6 +8,8 @@ type ButtonProps = {
   bgColor?: string;
   fontSize?: number;
   width?: number;
+  height?: number;
+  href?: string;
 };
 
 export const Button = ({
@@ -14,14 +17,37 @@ export const Button = ({
   textColor,
   bgColor,
   fontSize,
-  width
+  width,
+  height,
+  href
 }: ButtonProps) => {
-  return (
-    <div
-      className="h-10 flex justify-center items-center rounded-3xl hover:cursor-pointer hover:opacity-75 p-5"
+  return href ? (
+    <Link
+      className="flex justify-center items-center rounded-3xl hover:cursor-pointer hover:opacity-85 p-5 shadow"
       style={{
         backgroundColor: bgColor ?? colors.primary,
-        width: width ?? 132
+        width: width ?? 132,
+        height: height ?? 40
+      }}
+      href={href}
+    >
+      <span
+        className="text-sm"
+        style={{
+          color: textColor ?? colors.primary,
+          fontSize: fontSize ?? 12
+        }}
+      >
+        {text}
+      </span>
+    </Link>
+  ) : (
+    <div
+      className="flex justify-center items-center rounded-3xl hover:cursor-pointer hover:opacity-85 p-5 shadow"
+      style={{
+        backgroundColor: bgColor ?? colors.primary,
+        width: width ?? 132,
+        height: height ?? 40
       }}
     >
       <span

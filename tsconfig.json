@@ -19,10 +19,10 @@
     ],
     "paths": {
       "@/*": ["*"],
-      "@/fonts/*": ["app/assets/fonts/*"],
+      "@/fonts/*": ["assets/fonts/*"],
       "@/components/common/*": ["components/common/*"],
       "@/components/home/*": ["components/home/*"],
-      "@/images/*": ["app/assets/images/*"],
+      "@/images/*": ["assets/images/*"],
       "@/tailwindConfig/*": ["../*"]
     },
     "baseUrl": "src"

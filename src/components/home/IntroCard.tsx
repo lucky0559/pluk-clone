@@ -16,14 +16,47 @@ export const IntroCard = () => {
           <GiDiamonds className="text-mainFont" />
         </div>
       </div>
-      <div>
+      <div className="space-y-5 mb-5">
         <Button
           text="Sign in with email"
           bgColor={colors.secondary}
           textColor={colors.secondaryFont}
           fontSize={15}
           width={372}
+          height={52}
+          href="/sign-in"
         />
+        <Button
+          text="Create account"
+          bgColor={colors.mainFont}
+          fontSize={15}
+          width={372}
+          height={52}
+        />
+      </div>
+      <div className="text-xs text-gray-500">
+        <span className="block mb-2">
+          Elsup user? Easily sign in with your Pulse account details.
+        </span>
+        <p className="mb-4">
+          By signing in or creating an account, you confirm that you&apos;ve
+          read and agreed to the{" "}
+          <b className="text-mainFont hover:cursor-pointer">
+            Terms & Conditions
+          </b>{" "}
+          and{" "}
+          <b className="text-mainFont hover:cursor-pointer">Privacy Notice</b>{" "}
+          to use the services.
+        </p>
+        <span className="text-gray-700 font-semibold">
+          <span className="hover:cursor-pointer hover:text-mainFont">
+            Learn more about this release
+          </span>
+          <span className="text-gray-200 mx-4 w-[1px]">|</span>
+          <span className="hover:cursor-pointer hover:text-mainFont">
+            Contact us
+          </span>
+        </span>
       </div>
     </div>
   );
