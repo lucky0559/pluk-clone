@@ -19,11 +19,13 @@
     ],
     "paths": {
       "@/*": ["*"],
-      "@/fonts/*": ["assets/fonts/*"],
-      "@/components/*": ["components/*"],
-      "@/images/*": ["assets/images/*"]
+      "@/fonts/*": ["app/assets/fonts/*"],
+      "@/components/common/*": ["components/common/*"],
+      "@/components/home/*": ["components/home/*"],
+      "@/images/*": ["app/assets/images/*"],
+      "@/tailwindConfig/*": ["../*"]
     },
-    "baseUrl": "src/app"
+    "baseUrl": "src"
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]

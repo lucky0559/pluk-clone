@@ -1,11 +1,10 @@
 import type { Config } from "tailwindcss";
 
 export const colors = {
-  primary: "#E2E8CE",
-  secondary: "#ACBFA4",
-  mainFont: "#FF1B1C",
-  secondaryFont: "#262626",
-  cWhite: "#FFFFFF"
+  primary: "#FFFFFF",
+  secondary: "#FFF8E8",
+  mainFont: "#990D35",
+  secondaryFont: "#262626"
 };
 
 const config: Config = {
@@ -22,7 +21,6 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))"
       },
       fontFamily: {
-        Montserrat: "Montserrat",
         Amsterdam: "Amsterdam"
       },
       colors

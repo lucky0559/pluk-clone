@@ -1,6 +1,6 @@
-import { Button } from "@/components/Button";
 import React from "react";
-import { colors } from "../../../tailwind.config";
+import { Button } from "@/components/common/Button";
+import { colors } from "@/tailwindConfig/tailwind.config";
 
 export const CookiesNotice = () => {
   return (

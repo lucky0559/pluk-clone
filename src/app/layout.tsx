@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-import { Topnav } from "@/components/Topnav";
+import { Roboto } from "next/font/google";
+import { Topnav } from "@/components/common/Topnav";
 
 export const metadata: Metadata = {
   title: "KULP",
   description: "Reverse KULP"
 };
+
+const montserrat = Roboto({ subsets: ["latin"], weight: ["400"] });
 
 export default function RootLayout({
   children
@@ -15,9 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-Montserrat font-normal text-secondaryFont">
+      <body
+        className={`font-normal text-secondaryFont min-h-screen ${montserrat.className}`}
+      >
         <Topnav />
-        <div>{children}</div>
+        <main className="m-0 p-0">{children}</main>
       </body>
     </html>
   );

@@ -7,7 +7,6 @@
   src: url("./assets/fonts/Amsterdam.ttf");
 }
 
-@font-face {
-  font-family: Montserrat;
-  src: url("./assets/fonts/Montserrat.ttf");
+body {
+  background-color: white;
 }

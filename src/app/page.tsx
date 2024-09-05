@@ -1,24 +1,34 @@
-import { CookiesNotice } from "@/components/CookiesNotice";
-import { FileProtectOutlined } from "@ant-design/icons";
-import Image from "next/image";
-import imageBG from "@/images/homeBG.jpg";
+"use client";
 
-export default function Home() {
+import { IntroCard } from "@/components/home/IntroCard";
+import { CookiesNotice } from "../components/home/CookiesNotice";
+import { GoShieldCheck } from "react-icons/go";
+import { useState } from "react";
+
+export default function HomePage() {
+  const [isCookiesNoticeConfirm, setIsCookiesNoticeConfirm] = useState(false);
   return (
-    <>
-      <div className="bg-secondary flex px-12 py-[14px] py h-[52px] z-10">
-        <FileProtectOutlined
-          style={{ fontSize: 24 }}
-          className="text-mainFont"
-        />
+    <div className="h-[calc(100vh-64px)] overflow-hidden">
+      <div className="bg-secondary flex px-12 py-[14px] h-[52px] z-50">
+        <GoShieldCheck className="text-mainFont text-2xl" />
         <p className="ml-2">
           Eslup user? Easily sign in with your Eslup account details.
         </p>
       </div>
-      <Image src={imageBG} alt="workout" fill className="-z-10" />
-      <div className="absolute bottom-0 w-full">
-        <CookiesNotice />
+      {/* <div className="overflow-hidden relative h-full"> */}
+      <div className="bg-[url(./assets/images/homeBG.jpg)] bg-cover bg-center h-full -z-50 relative">
+        <IntroCard />
       </div>
-    </>
+      {/* </div> */}
+
+      {!isCookiesNoticeConfirm && (
+        <div
+          className="absolute bottom-0 w-full"
+          onClick={() => setIsCookiesNoticeConfirm(true)}
+        >
+          <CookiesNotice />
+        </div>
+      )}
+    </div>
   );
 }
