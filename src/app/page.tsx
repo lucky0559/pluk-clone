@@ -1,9 +1,8 @@
 "use client";
 
-import { IntroCard } from "@/components/home/IntroCard";
-import { CookiesNotice } from "../components/home/CookiesNotice";
 import { GoShieldCheck } from "react-icons/go";
 import { useState } from "react";
+import { CookiesNotice, IntroCard } from "@/components/home";
 
 export default function HomePage() {
   const [isCookiesNoticeConfirm, setIsCookiesNoticeConfirm] = useState(false);
@@ -12,16 +11,16 @@ export default function HomePage() {
       <div className="bg-secondary flex px-12 py-[14px] h-[52px] z-50">
         <GoShieldCheck className="text-mainFont text-2xl" />
         <p className="ml-2">
-          Eslup user? Easily sign in with your Eslup account details.
+          Pals user? Easily sign in with your Pals account details.
         </p>
       </div>
       {/* <div className="overflow-hidden relative h-full"> */}
-      <div className="bg-[url(../assets/images/homeBG.jpg)] bg-cover bg-center h-full relative">
+      <div className="bg-[url(../assets/images/homeBG.jpg)] bg-cover bg-bottom h-full relative">
         <IntroCard />
       </div>
       {/* </div> */}
 
-      {isCookiesNoticeConfirm && (
+      {!isCookiesNoticeConfirm && (
         <div
           className="absolute bottom-0 w-full z-50"
           onClick={() => setIsCookiesNoticeConfirm(true)}

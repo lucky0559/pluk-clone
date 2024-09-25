@@ -10,3 +10,7 @@
 body {
   background-color: white;
 }
+
+input[type="password"]::-ms-reveal {
+  display: none;
+}

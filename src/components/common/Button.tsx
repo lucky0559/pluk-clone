@@ -1,64 +1,43 @@
-import { colors } from "@/tailwindConfig/tailwind.config";
 import Link from "next/link";
-import React from "react";
+import { ComponentType, ReactElement } from "react";
+import { IconType } from "react-icons";
 
 type ButtonProps = {
   text: string;
-  textColor?: string;
-  bgColor?: string;
-  fontSize?: number;
-  width?: number;
-  height?: number;
   href?: string;
+  className?: string;
+  textCn?: string;
+  Icon?: ReactElement;
+  isDisable?: boolean;
 };
 
 export const Button = ({
   text,
-  textColor,
-  bgColor,
-  fontSize,
-  width,
-  height,
-  href
+  className,
+  textCn,
+  href,
+  Icon,
+  isDisable
 }: ButtonProps) => {
   return href ? (
     <Link
-      className="flex justify-center items-center rounded-3xl hover:cursor-pointer hover:opacity-85 p-5 shadow"
-      style={{
-        backgroundColor: bgColor ?? colors.primary,
-        width: width ?? 132,
-        height: height ?? 40
-      }}
+      className={`flex justify-center items-center rounded-3xl ${
+        !isDisable && "hover:cursor-pointer hover:opacity-85"
+      } p-5 shadow ${className} ${isDisable && "bg-gray-200 text-gray-400"}`}
       href={href}
     >
-      <span
-        className="text-sm"
-        style={{
-          color: textColor ?? colors.primary,
-          fontSize: fontSize ?? 12
-        }}
-      >
-        {text}
-      </span>
+      {Icon}
+      <span className={`text-sm font-semibold ${textCn}`}>{text}</span>
     </Link>
   ) : (
     <div
-      className="flex justify-center items-center rounded-3xl hover:cursor-pointer hover:opacity-85 p-5 shadow"
-      style={{
-        backgroundColor: bgColor ?? colors.primary,
-        width: width ?? 132,
-        height: height ?? 40
-      }}
+      className={`flex justify-center items-center rounded-3xl p-5 shadow ${className} ${
+        isDisable
+          ? "bg-gray-200 text-gray-400"
+          : "hover:cursor-pointer hover:opacity-85"
+      }`}
     >
-      <span
-        className="text-sm"
-        style={{
-          color: textColor ?? colors.primary,
-          fontSize: fontSize ?? 12
-        }}
-      >
-        {text}
-      </span>
+      <span className={`text-sm font-semibold ${textCn}`}>{text}</span>
     </div>
   );
 };

@@ -11,7 +11,7 @@ export const Topnav = () => {
         className="bg-primary h-16 flex items-center relative z-10"
       >
         <p className="text-mainFont font-Amsterdam font-bold text-2xl tracking-wide">
-          KU EFIL U.R.P
+          CHEW PALS
         </p>
         <Image src={logo} alt="logo" className="h-full w-auto pl-2 py-3" />
       </Link>

@@ -20,7 +20,12 @@ export const CookiesNotice = () => {
         </p>
       </div>
       <div className="flex flex-auto items-center justify-end">
-        <Button text="Got it" textColor={colors.mainFont} />
+        <Button
+          text="Got it"
+          textColor={colors.mainFont}
+          textCn="text-mainFont"
+          className="w-[132px] h-10 bg-primary"
+        />
       </div>
     </div>
   );

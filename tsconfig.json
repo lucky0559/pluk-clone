@@ -18,7 +18,7 @@
       }
     ],
     "paths": {
-      "@/*": ["*"],
+      "@/*": ["./*"],
       "@/fonts/*": ["assets/fonts/*"],
       "@/components/common/*": ["components/common/*"],
       "@/components/home/*": ["components/home/*"],
