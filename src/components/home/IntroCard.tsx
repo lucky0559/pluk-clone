@@ -1,4 +1,6 @@
-import { Button } from "@/components/common/Button";
+import { Button } from "@/components/ui";
+import { Button as ButtonCommon } from "@/components/common";
+import Link from "next/link";
 import React from "react";
 import { GiDiamonds } from "react-icons/gi";
 import { MdEmail } from "react-icons/md";
@@ -16,20 +18,20 @@ export const IntroCard = () => {
           <GiDiamonds className="text-mainFont" />
         </div>
       </div>
-      <div className="space-y-5 mb-5">
+      <div className="space-y-5 mb-5 flex flex-col">
+        <Button asChild variant={"defaultWithIcon"} size={"defaultWithIcon"}>
+          <Link href="/sign-in">
+            <MdEmail className="mr-1" fontSize={20} />
+            Sign in with email
+          </Link>
+        </Button>
         <Button
-          text="Sign in with email"
-          href="/sign-in"
-          className="bg-secondary w-[372] h-[52]"
-          textCn="text-secondaryFont text-[15px]"
-          Icon={<MdEmail className="mr-1" fontSize={20} />}
-        />
-        <Button
-          text="Create account"
-          className="bg-mainFont w-[372px] h-[52px]"
-          textCn="text-primary text-[15px]"
-          href="/sign-up"
-        />
+          asChild
+          variant={"secondaryWithIcon"}
+          size={"defaultSecondaryIcon"}
+        >
+          <Link href="/sign-up">Create account</Link>
+        </Button>
       </div>
       <div className="text-xs text-gray-500">
         <span className="block mb-2">

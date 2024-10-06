@@ -8,7 +8,7 @@ export const Topnav = () => {
     <nav className="flex px-12 border-b-2 border-gray-200">
       <Link
         href="/"
-        className="bg-primary h-16 flex items-center relative z-10"
+        className="bg-primaryCustom h-16 flex items-center relative z-10"
       >
         <p className="text-mainFont font-Amsterdam font-bold text-2xl tracking-wide">
           CHEW PALS

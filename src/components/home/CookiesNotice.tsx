@@ -1,6 +1,4 @@
-import React from "react";
-import { Button } from "@/components/common/Button";
-import { colors } from "@/tailwindConfig/tailwind.config";
+import { Button } from "@/components/ui";
 
 export const CookiesNotice = () => {
   return (
@@ -20,12 +18,9 @@ export const CookiesNotice = () => {
         </p>
       </div>
       <div className="flex flex-auto items-center justify-end">
-        <Button
-          text="Got it"
-          textColor={colors.mainFont}
-          textCn="text-mainFont"
-          className="w-[132px] h-10 bg-primary"
-        />
+        <Button variant={"outline"} size={"sm"}>
+          Got it
+        </Button>
       </div>
     </div>
   );
