@@ -1,6 +1,6 @@
 "use client";
 
-import { TextInput, Button as CustomButton } from "@/components/common";
+import { TextInput } from "@/components/common";
 import {
   Button,
   Card,
