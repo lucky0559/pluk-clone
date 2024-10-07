@@ -1,35 +1,40 @@
-import { Field, Input, Label } from "@headlessui/react";
+import { Input, Label } from "@/components/ui";
+import { cn } from "@/lib/utils";
 import React, { ReactElement } from "react";
 
 type TextInputProps = {
+  htmlFor?: string;
   label: string;
-  name: string;
-  type?: string;
+  id: string;
+  type?: "email" | "password" | "text";
   placeholder?: string;
   Icon?: ReactElement;
+  className?: string;
 };
 
 export const TextInput = ({
+  htmlFor,
   label,
-  name,
+  id,
   type,
   placeholder,
-  Icon
+  Icon,
+  className
 }: TextInputProps) => {
   return (
-    <>
-      <Field className="flex flex-col w-full">
-        <Label className="text-gray-500 text-xs mb-1">{label}</Label>
-        <div className="flex relative">
-          <Input
-            name={name}
-            type={type}
-            placeholder={placeholder}
-            className="rounded-xl px-4 bg-gray-100 h-12 w-full font-medium placeholder:text-gray-400 outline-none"
-          />
-          <div className="absolute right-0 self-center mr-5">{Icon}</div>
-        </div>
-      </Field>
-    </>
+    <div
+      className={cn("grid w-full items-center gap-1.5 mt-[20px]", className)}
+    >
+      {label && <Label htmlFor={htmlFor}>{label}</Label>}
+      <div className="relative flex">
+        <Input
+          type={type}
+          id={id}
+          placeholder={placeholder}
+          className="h-[48px]"
+        />
+        <div className="absolute right-0 self-center mr-5">{Icon}</div>
+      </div>
+    </div>
   );
 };
