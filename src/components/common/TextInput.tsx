@@ -6,7 +6,7 @@ type TextInputProps = {
   htmlFor?: string;
   label: string;
   id: string;
-  type?: "email" | "password" | "text";
+  type?: "email" | "password" | "text" | "number";
   placeholder?: string;
   Icon?: ReactElement;
   className?: string;
@@ -25,7 +25,11 @@ export const TextInput = ({
     <div
       className={cn("grid w-full items-center gap-1.5 mt-[20px]", className)}
     >
-      {label && <Label htmlFor={htmlFor}>{label}</Label>}
+      {label && (
+        <Label htmlFor={htmlFor} className="text-gray-500">
+          {label}
+        </Label>
+      )}
       <div className="relative flex">
         <Input
           type={type}

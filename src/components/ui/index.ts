@@ -16,6 +16,11 @@ import {
   SelectTrigger,
   SelectValue
 } from "@/components/ui/select";
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSlot
+} from "@/components/ui/input-otp";
 
 export {
   buttonVariants,
@@ -32,7 +37,10 @@ export {
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue
+  SelectValue,
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSlot
 };
 
 export type { ButtonProps };
